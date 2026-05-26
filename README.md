@@ -1,4 +1,4 @@
-# SALO — Safety Activation Linear Out-of-distribution probe
+# SALO — Sparse Aware Latent Operator
 
 A small CNN probe over a contiguous mid-stack window of an instruction-tuned LLM's hidden states, trained to detect jailbreak / harmful prompts. The probe is supervised on (safe, unsafe) prompt pairs from **PKU-SafeRLHF** and **lmsys/toxic-chat**, calibrated on **XSTest**, and evaluated on **AdvBench (direct + prefilling)**, **GCG suffixes**, and **AutoDAN**.
 

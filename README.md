@@ -1,4 +1,4 @@
-# SALO — Sparse Aware Latent Operator
+# SALO — Sparse Activation Localization Operator
 
 [Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection
 (Accepted to ICML2026)](https://arxiv.org/abs/2605.02958)

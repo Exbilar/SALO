@@ -1,6 +1,9 @@
 # SALO — Sparse Aware Latent Operator
 
-A small CNN probe over a contiguous mid-stack window of an instruction-tuned LLM's hidden states, trained to detect jailbreak / harmful prompts. The probe is supervised on (safe, unsafe) prompt pairs from **PKU-SafeRLHF** and **lmsys/toxic-chat**, calibrated on **XSTest**, and evaluated on **AdvBench (direct + prefilling)**, **GCG suffixes**, and **AutoDAN**.
+[Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection
+(Accepted to ICML2026)](https://arxiv.org/abs/2605.02958)
+
+SALO is a small CNN probe over a contiguous mid-stack window of an instruction-tuned LLM's hidden states, trained to detect jailbreak / harmful prompts. The probe is supervised on (safe, unsafe) prompt pairs from **PKU-SafeRLHF** and **lmsys/toxic-chat**, calibrated on **XSTest**, and evaluated on **AdvBench (direct + prefilling)**, **GCG suffixes**, and **AutoDAN**.
 
 This repo is a clean re-implementation suitable for reproduction. The default config targets `Qwen2.5-7B-Instruct`; the same pipeline runs on Mistral-7B and Llama-3.1-8B by editing `configs.py`.
 
@@ -133,3 +136,16 @@ Changing the slice changes `hiddenDetector`'s effective receptive field along th
 ## Ethics & intended use
 
 The attack CSVs in `datasets/` (GCG / AutoDAN against Qwen2.5-7B, Llama-3.1-8B, Mistral-7B) are released **solely** to allow reproduction of the SALO detector. Harmful-behaviour prompts originate from AdvBench (Zou et al., 2023); the adversarial payloads were re-derived with the published GCG and AutoDAN algorithms — both of which already ship comparable attack strings in their official repositories, so this release does not introduce new offensive capability. GCG suffixes are model-specific gibberish with poor cross-model transfer. Please do not redistribute these files as standalone jailbreaks or use them against production systems without authorization. See `datasets/NOTICE.md` for per-file provenance.
+
+## How to cite this work
+
+If you find this work useful, please consider citing:
+
+```
+@article{hu2026tracing,
+  title   = {Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection},
+  author  = {Xulin Hu and Che Wang and Wei Yang Bryan Lim and Jianbo Gao and Zhong Chen},
+  journal = {arXiv preprint arXiv:2605.02958},
+  year    = {2026}
+}
+```

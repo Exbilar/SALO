@@ -32,7 +32,7 @@ pip install torch --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 ```
 
-Single-GPU is sufficient for everything below; ~24 GB VRAM (e.g. one A100/H100/4090) is enough to host the 7B base LLM in fp16 plus the probe.
+Single-GPU is sufficient for everything below; ~40 GB VRAM (e.g. one A100/H100) is enough to host the 7B base LLM in fp16 plus the probe.
 
 ---
 
